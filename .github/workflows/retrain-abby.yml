@@ -1,17 +1,30 @@
-name: Retrain Abby on MD Update
+name: Retrain Abby — Albanny Technologies AI
 
 on:
   push:
+    branches:
+      - main
     paths:
       - 'albanny_technologies_ai_training.md'
 
 jobs:
   retrain:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Trigger Chatbase Resync
+      - name: Notify — Retrain Started
+        run: echo "📡 MD file updated. Triggering Abby retrain..."
+
+      - name: Trigger n8n Retrain Webhook
         run: |
-          curl -X POST https://www.chatbase.co/api/v1/retrain \
-            -H "Authorization: Bearer ${{ secrets.CHATBASE_API_KEY }}" \
+          curl -X POST "${{ secrets.N8N_RETRAIN_WEBHOOK }}" \
             -H "Content-Type: application/json" \
-            -d '{"chatbotId": "YOUR_CHATBOT_ID"}'
+            -d '{
+              "event": "md_updated",
+              "file": "albanny_technologies_ai_training.md",
+              "source": "github_actions",
+              "timestamp": "'"$(date -u +%Y-%m-%dT%H:%M:%SZ)"'"
+            }'
+
+      - name: Confirm — Retrain Signal Sent
+        run: echo "✅ Retrain signal sent to n8n successfully."
