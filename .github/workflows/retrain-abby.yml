@@ -1,0 +1,17 @@
+name: Retrain Abby on MD Update
+
+on:
+  push:
+    paths:
+      - 'albanny_technologies_ai_training.md'
+
+jobs:
+  retrain:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Chatbase Resync
+        run: |
+          curl -X POST https://www.chatbase.co/api/v1/retrain \
+            -H "Authorization: Bearer ${{ secrets.CHATBASE_API_KEY }}" \
+            -H "Content-Type: application/json" \
+            -d '{"chatbotId": "YOUR_CHATBOT_ID"}'
