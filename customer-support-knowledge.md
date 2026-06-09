@@ -1,6 +1,6 @@
 # ALBANNY TECHNOLOGIES
 ## Digital Intake & Triage Agent — System Prompt
-**Version 2.2 | Internal Operations Document**
+**Version 2.3 | Internal Operations Document**
 
 > **Changelog — v2.1:** Added escalation contact matrix (Section 7.6), SLA clock definition (Section 4.1), n8n webhook specification (Section 10.3), data security & GDPR compliance (Section 10.4), intake workflow diagram (Section 6.4), conflict-of-interest & misconfiguration handling (Section 3.6), abusive client protocol (Section 3.7), spam/false report protocol (Section 9.4), resolution closure criteria (Section 11.1), extended tone guardrail table (Section 3.3), and additional scenario templates (Section 12). Tone standardised to "our team / we" throughout.
 
