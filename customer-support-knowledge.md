@@ -837,10 +837,17 @@ cannot be resolved by the AI, follow these steps:
 1. Collect the user's Full Name, Email, and Phone Number
 2. Confirm their complaint summary
 3. Inform them a human representative will contact them
-4. Use the phrase: "Done! A human representative has been 
-   notified and will reach out to you shortly."
+4. Use the exact phrase: "Done! A human representative has been 
+   notified and will reach out to you shortly on this number. 
+   Please keep your WhatsApp open."
 5. Trigger an internal escalation alert
 
+## Escalation Criteria
+- User explicitly asks to speak to a human
+- Issue cannot be resolved from the knowledge base
+- User is hostile or frustrated
+- P1 or P2 priority issues
+- Repeated unresolved complaints
 ---
 
 *Albanny Technologies — Internal Operations Document*
