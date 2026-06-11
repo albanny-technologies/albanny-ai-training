@@ -1,0 +1,29 @@
+name: Retrain Abby — QA Bank
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'abby-qa-bank.md'
+
+jobs:
+  retrain:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify — Retrain Started
+        run: echo "📡 abby-qa-bank.md updated. Triggering Abby retrain..."
+
+      - name: Trigger n8n Retrain Webhook
+        run: |
+          curl -X POST "${{ secrets.N8N_RETRAIN_WEBHOOK }}" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "event": "md_updated",
+              "file": "abby-qa-bank.md",
+              "source": "github_actions",
+              "timestamp": "'"$(date -u +%Y-%m-%dT%H:%M:%SZ)"'"
+            }'
+
+      - name: Confirm — Retrain Signal Sent
+        run: echo "✅ Retrain signal sent to n8n successfully."
