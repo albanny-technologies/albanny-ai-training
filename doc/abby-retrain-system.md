@@ -204,20 +204,3 @@ If any answer is outdated, check the GitHub Actions log for errors and re-trigge
 │  COST: Free (GitHub Actions) + minimal n8n execution        │
 │  MANUAL EFFORT: Zero after initial setup                    │
 └─────────────────────────────────────────────────────────────┘
-Company:        Albanny Technologies
-Founded:        2014
-Original RC:    20003 (CAC — registered 2014)
-LLC Reg. No:    8032300 (upgraded to Limited Liability Company, 2024)
-HQ Address:     42 Ikot Ekpene Road, Uyo, Akwa Ibom, Nigeria
-CEO:            Mfonobong Albert (Techpreneur, Web Developer, SEO Specialist)
-Sector:         ICT — Web Design, Mobile Apps, Digital Marketing
-Awards:         7 International Awards (2020–2025)
-Clients Served: 103+
-Completed Jobs: 116+
-Web Plans:      9 tiers — ₦450,000 ($350) to ₦8,500,000 ($5,000)
-Academy:        3-month certified programs — physical campus in Uyo
-Service Reach:  All of Nigeria (remote) + International
-Support:        24/7
-Quote Link:     https://albannytechnologies.com/request-a-quote/
-Consultation:   https://albannytechnologies.com/free-consultation/
-Social:         @AlbannyTech (Twitter) | @albanny_technologies (IG)
