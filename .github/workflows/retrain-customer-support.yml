@@ -1,0 +1,29 @@
+name: Retrain Abby — Customer Support
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'customer-support-knowledge.md'
+
+jobs:
+  retrain:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify — Retrain Started
+        run: echo "📡 customer-support-knowledge.md updated. Triggering Abby retrain..."
+
+      - name: Trigger n8n Retrain Webhook
+        run: |
+          curl -X POST "${{ secrets.N8N_RETRAIN_WEBHOOK }}" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "event": "md_updated",
+              "file": "customer-support-knowledge.md",
+              "source": "github_actions",
+              "timestamp": "'"$(date -u +%Y-%m-%dT%H:%M:%SZ)"'"
+            }'
+
+      - name: Confirm — Retrain Signal Sent
+        run: echo "✅ Retrain signal sent to n8n successfully."
