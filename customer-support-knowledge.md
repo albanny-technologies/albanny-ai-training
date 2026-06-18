@@ -149,13 +149,72 @@ After escalation to the Support Team Lead:
 
 You must match every inbound complaint against the five tiers below. Use the **exact SLA Language** provided when confirming a classification to the client.
 
-| Priority | Description | Response Time | Resolution Time |
-|---|---|---|---|
-| **P1 — Critical** (Website Downtime) | Complete or near-complete inability to access website or live platform (≥50% of users or core pages affected) | 15 – 30 min | 1 – 3 Hours |
-| **P2 — High** (Payment / Voting Issues) | Failures in payment processing or voting/transactional functionality affecting end-users | 30 – 45 min | 1 – 3 Hours |
-| **P3 — Moderate** (Technical Issues) | Functional errors/bugs impairing usability but not blocking core access or financial operations | 1 – 2 Hours | 24 – 48 Hours |
-| **P4 — Low** (Minor Content Updates) | Non-urgent content changes, text edits, or cosmetic updates | 4 – 8 Hours | 2 – 3 Business Days |
-| **P5 — Event Updates** (Live & City Events) | Real-time event updates: schedules, results, scores, venue changes, cancellations — strictly during active live/scheduled windows | 15 – 30 min | 1 – 2 Hours *(During event window only)* |
+This matrix governs how every inbound complaint, ticket, or request — across all Albanny Technologies service lines — is classified, communicated, and resolved. It replaces single-service SLA references with one unified standard. Every inbound item must be matched against the tiers in Section 1, using the service-line guidance in Section 2 to determine the correct tier, and the exact SLA Language in Section 3 when confirming a classification to the client.
+
+## 1. Core Priority Tiers
+
+Match every inbound complaint against the tiers below. Response Time is the maximum time to first acknowledge and triage the issue. Resolution Time is the maximum time to restore full functionality or deliver the requested fix, measured from the time the ticket is logged.
+
+| Priority | Description | Applies To | Response Time | Resolution Time |
+| --- | --- | --- | --- | --- |
+| **P1 — Critical (Platform Downtime)** | Complete or near-complete inability to access a live website, app, or platform (≥50% of users or core pages/screens affected). | Web Design & Development, E-commerce, School Portal, Mobile Apps, AI Automation (production), General Contract platforms, Website/App Management & Maintenance | 15–30 min | 1–3 Hours |
+| **P2 — High (Payment / Transactional / Voting Issues)** | Failures in payment processing, checkout, voting, enrolment/fee payment, or other transactional functionality affecting end-users. | E-commerce, School Portal (fees/admissions), Mobile Apps (transactional), AI Automation (transactional workflows), General Contract platforms | 30–45 min | 1–3 Hours |
+| **P3 — Moderate (Functional / Technical Issues)** | Functional errors or bugs that impair usability but do not block core access or financial operations. | Web Design & Development, Mobile Apps, E-commerce, School Portal, ICT Consultancy (support issues), AI Automation (non-critical), Website/App Management & Maintenance, Digital Marketing & SEO (tracking/tooling faults) | 1–2 Hours | 24–48 Hours |
+| **P4 — Low (Minor Updates / Routine Requests)** | Non-urgent content changes, text edits, cosmetic updates, routine reporting, or standard advisory requests with no functional impact. | Web Design & Development, Mobile Apps, E-commerce, School Portal, Digital Marketing Solutions, SEO, ICT Consultancy, Training & Certification, Web Design/Development Training, Website/App Management & Maintenance | 4–8 Hours | 2–3 Business Days |
+| **P5 — Time-Bound (Scheduled & Live Deliverables)** | Updates tied to a fixed external deadline or live window — real-time event data, exam/result release dates, campaign launch windows, admission deadlines, certification/exam dates — where missing the window causes direct harm. | Live & City Events, School Portal (results/admissions deadlines), Digital Marketing (campaign launches), Training & Certification (exam/cert dates), E-commerce (promo/sale launches) | 15–30 min | 1–2 Hours (within the active window) |
+| **P6 — AI Automation (Production-Critical)** | Failure, stoppage, or erroneous output of a deployed AI automation/workflow in active production use, where the automation itself is the client's operating process. | AI Automation | 30–60 min | 2–6 Hours |
+
+> **Note on P6 (AI Automation):** a P6 classification applies only to automations or AI-driven workflows that are live in production and form part of the client's active operating process (e.g. an automated approvals pipeline, a live customer-facing chat agent, a production data pipeline). Automations still in development, testing, or pilot phase are classified under P3–P4 according to the nature of the issue.
+
+## 2. Service Line → Tier Mapping
+
+Albanny Technologies offers twelve service lines. Because urgency depends on what is actually affected — not which service produced it — use the table below to identify the correct tier once you know the nature of the fault or request.
+
+| Service Line | Typical P1–P2 Trigger | Typical P3–P5 Trigger |
+| --- | --- | --- |
+| Web Design & Development | Site is down or inaccessible (P1) | Bug or styling issue (P3); content/text edit (P4) |
+| Mobile App Development | App crashes on launch or is unusable for most users (P1) | Feature bug (P3); minor UI/copy update (P4) |
+| Digital Marketing Solutions | Live ad campaign fails to launch at scheduled time (P5) | Reporting delay or optimisation request (P4) |
+| SEO (Search Engine Optimisation) | Site de-indexed or major ranking drop tied to a technical fault (P3, escalate if traffic-critical) | Routine audit, keyword research, monthly report (P4) |
+| E-commerce Website | Checkout/payment failure (P2); storefront down (P1) | Product page bug (P3); catalogue/content update (P4); sale launch window (P5) |
+| School Portal | Fee payment failure (P2); portal down during results/admissions (P1) | Display bug (P3); routine record update (P4); results/admission deadline (P5) |
+| Training & Certification | Exam platform inaccessible during a scheduled exam window (P5) | Course content fix (P3); schedule/material update (P4) |
+| ICT Consultancy | Client-critical system outage under active support (P1, by system affected) | Advisory request, strategy review, routine support ticket (P4) |
+| General Contract (Government/Corporate) | Per negotiated contract SLA — see Section 4 | Per negotiated contract SLA — see Section 4 |
+| Web Design/Development Training | N/A (non-production) | Curriculum, scheduling, or material requests (P4) |
+| AI Automation | Production workflow stopped or producing faulty output (P6) | Non-critical automation tuning or enhancement (P3–P4) |
+| Website & Mobile App Management/Maintenance | Managed site/app down or breached (P1) | Routine maintenance, patching, backups, minor fixes (P3–P4) |
+
+Advisory-only and training-based services (Digital Marketing Solutions, SEO, ICT Consultancy, Training & Certification, Web Design/Development Training) do not carry production downtime in the traditional sense, and are therefore classified at P3 or P4 by default. They escalate to P5 only when tied to a fixed external deadline (an exam date, a scheduled campaign launch, an admissions cut-off).
+
+## 3. SLA Confirmation Language
+
+Use the exact wording below when confirming a classification to the client. Insert the ticket reference and the specific times drawn from Section 1.
+
+- **P1** – "This has been classified as a Priority 1 (Critical) issue. Our team will respond within 15–30 minutes and aims to resolve this within 1–3 hours."
+- **P2** – "This has been classified as a Priority 2 (High) issue affecting payment/transactional functionality. Our team will respond within 30–45 minutes and aims to resolve this within 1–3 hours."
+- **P3** – "This has been classified as a Priority 3 (Moderate) issue. Our team will respond within 1–2 hours and aims to resolve this within 24–48 hours."
+- **P4** – "This has been classified as a Priority 4 (Low) request. Our team will respond within 4–8 hours and aims to complete this within 2–3 business days."
+- **P5** – "This has been classified as a Priority 5 (Time-Bound) item tied to a scheduled window. Our team will respond within 15–30 minutes and resolve within 1–2 hours, strictly within the active event/deadline window."
+- **P6** – "This has been classified as a Priority 6 (AI Automation – Production-Critical) issue. Our team will respond within 30–60 minutes and aims to resolve this within 2–6 hours."
+
+## 4. General Contract (Government & Corporate Projects)
+
+General Contract engagements — government and corporate projects delivered under a separate Master Service Agreement or Statement of Work — are not bound by the default tiers above. These engagements typically involve bespoke deliverables, custom acceptance criteria, and client-specific governance requirements that the standard matrix cannot anticipate.
+
+For General Contract work:
+
+- The applicable response and resolution times are defined in the project's own contract, SOW, or negotiated SLA schedule, and that document takes precedence over this matrix.
+- Where the contract is silent on a specific issue type, default to the closest matching tier in Section 1 based on actual impact (e.g. full outage of a delivered government platform defaults to P1).
+- Any client-facing communication on a General Contract issue should reference the specific contract/SOW clause rather than the generic SLA language in Section 3, unless the contract explicitly adopts this matrix.
+
+## 5. Escalation & Review
+
+- Any ticket unresolved at 80% of its allotted Resolution Time must be escalated to the relevant team lead automatically.
+- Multi-service incidents (e.g. an outage affecting both a website and a linked mobile app) are classified at the highest applicable tier across all affected services.
+- This matrix is reviewed quarterly, or immediately upon the launch of a new service line, to ensure tiers remain aligned with actual operating risk.
+
+---
 
 ### 4.1 SLA Clock — When Timing Starts
 
