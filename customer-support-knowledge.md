@@ -146,12 +146,9 @@ After escalation to the Support Team Lead:
 
 ## 4. SLA PRIORITY CLASSIFICATION MATRIX
 
+This matrix governs how every inbound complaint, ticket, or request — across all Albanny Technologies service lines — is classified, communicated, and resolved. It replaces single-service SLA references with one unified standard. Every inbound item must be matched against the tiers in Section 4.1, using the service-line guidance in Section 4.2 to determine the correct tier, and the exact SLA Language in Section 4.3 when confirming a classification to the client.
 
-You must match every inbound complaint against the five tiers below. Use the **exact SLA Language** provided when confirming a classification to the client.
-
-This matrix governs how every inbound complaint, ticket, or request — across all Albanny Technologies service lines — is classified, communicated, and resolved. It replaces single-service SLA references with one unified standard. Every inbound item must be matched against the tiers in Section 1, using the service-line guidance in Section 2 to determine the correct tier, and the exact SLA Language in Section 3 when confirming a classification to the client.
-
-## 1. Core Priority Tiers
+## 4.1 Core Priority Tiers
 
 Match every inbound complaint against the tiers below. Response Time is the maximum time to first acknowledge and triage the issue. Resolution Time is the maximum time to restore full functionality or deliver the requested fix, measured from the time the ticket is logged.
 
@@ -166,7 +163,9 @@ Match every inbound complaint against the tiers below. Response Time is the maxi
 
 > **Note on P6 (AI Automation):** a P6 classification applies only to automations or AI-driven workflows that are live in production and form part of the client's active operating process (e.g. an automated approvals pipeline, a live customer-facing chat agent, a production data pipeline). Automations still in development, testing, or pilot phase are classified under P3–P4 according to the nature of the issue.
 
-## 2. Service Line → Tier Mapping
+---
+
+## 4.2 Service Line → Tier Mapping
 
 Albanny Technologies offers twelve service lines. Because urgency depends on what is actually affected — not which service produced it — use the table below to identify the correct tier once you know the nature of the fault or request.
 
@@ -180,16 +179,18 @@ Albanny Technologies offers twelve service lines. Because urgency depends on wha
 | School Portal | Fee payment failure (P2); portal down during results/admissions (P1) | Display bug (P3); routine record update (P4); results/admission deadline (P5) |
 | Training & Certification | Exam platform inaccessible during a scheduled exam window (P5) | Course content fix (P3); schedule/material update (P4) |
 | ICT Consultancy | Client-critical system outage under active support (P1, by system affected) | Advisory request, strategy review, routine support ticket (P4) |
-| General Contract (Government/Corporate) | Per negotiated contract SLA — see Section 4 | Per negotiated contract SLA — see Section 4 |
+| General Contract (Government/Corporate) | Per negotiated contract SLA — see Section 4.4 | Per negotiated contract SLA — see Section 4.4 |
 | Web Design/Development Training | N/A (non-production) | Curriculum, scheduling, or material requests (P4) |
 | AI Automation | Production workflow stopped or producing faulty output (P6) | Non-critical automation tuning or enhancement (P3–P4) |
 | Website & Mobile App Management/Maintenance | Managed site/app down or breached (P1) | Routine maintenance, patching, backups, minor fixes (P3–P4) |
 
 Advisory-only and training-based services (Digital Marketing Solutions, SEO, ICT Consultancy, Training & Certification, Web Design/Development Training) do not carry production downtime in the traditional sense, and are therefore classified at P3 or P4 by default. They escalate to P5 only when tied to a fixed external deadline (an exam date, a scheduled campaign launch, an admissions cut-off).
 
-## 3. SLA Confirmation Language
+---
 
-Use the exact wording below when confirming a classification to the client. Insert the ticket reference and the specific times drawn from Section 1.
+## 4.3 SLA Confirmation Language
+
+Use the exact wording below when confirming a classification to the client. Insert the ticket reference and the specific times drawn from Section 4.1.
 
 - **P1** – "This has been classified as a Priority 1 (Critical) issue. Our team will respond within 15–30 minutes and aims to resolve this within 1–3 hours."
 - **P2** – "This has been classified as a Priority 2 (High) issue affecting payment/transactional functionality. Our team will respond within 30–45 minutes and aims to resolve this within 1–3 hours."
@@ -198,113 +199,113 @@ Use the exact wording below when confirming a classification to the client. Inse
 - **P5** – "This has been classified as a Priority 5 (Time-Bound) item tied to a scheduled window. Our team will respond within 15–30 minutes and resolve within 1–2 hours, strictly within the active event/deadline window."
 - **P6** – "This has been classified as a Priority 6 (AI Automation – Production-Critical) issue. Our team will respond within 30–60 minutes and aims to resolve this within 2–6 hours."
 
-## 4. General Contract (Government & Corporate Projects)
+---
+
+## 4.4 General Contract (Government & Corporate Projects)
 
 General Contract engagements — government and corporate projects delivered under a separate Master Service Agreement or Statement of Work — are not bound by the default tiers above. These engagements typically involve bespoke deliverables, custom acceptance criteria, and client-specific governance requirements that the standard matrix cannot anticipate.
 
 For General Contract work:
 
 - The applicable response and resolution times are defined in the project's own contract, SOW, or negotiated SLA schedule, and that document takes precedence over this matrix.
-- Where the contract is silent on a specific issue type, default to the closest matching tier in Section 1 based on actual impact (e.g. full outage of a delivered government platform defaults to P1).
-- Any client-facing communication on a General Contract issue should reference the specific contract/SOW clause rather than the generic SLA language in Section 3, unless the contract explicitly adopts this matrix.
+- Where the contract is silent on a specific issue type, default to the closest matching tier in Section 4.1 based on actual impact (e.g. full outage of a delivered government platform defaults to P1).
+- Any client-facing communication on a General Contract issue should reference the specific contract/SOW clause rather than the generic SLA language in Section 4.3, unless the contract explicitly adopts this matrix.
 
-## 5. Escalation & Review
+---
+
+## 4.5 SLA Clock Mechanics & Channel-Specific Examples
+
+Sections 4.1–4.4 define which tier applies and what the time targets are. This section defines exactly when the SLA clock starts, pauses, and resumes for any inbound request, regardless of intake channel (WhatsApp, email, phone, portal ticket, or otherwise), and restates each tier with channel-ready confirmation wording and worked examples. These clock rules apply uniformly across all six tiers, including P6 and General Contract items once mapped to a tier under Sections 4.2 and 4.4.
+
+### 4.5.1 When Timing Starts
+
+The SLA clock starts the moment a valid support request is received, regardless of whether the message has been read. "Received" is defined as the timestamp on the incoming message itself — the WhatsApp message timestamp, the email send timestamp, the portal ticket creation timestamp, or equivalent — not the time it is opened by an agent.
+
+| Clock Event | Definition |
+| --- | --- |
+| SLA Start | Timestamp of the client's first message containing the issue report |
+| Response Time Met | Timestamp of the agent's first substantive reply (acknowledgment + tier classification) |
+| Resolution Time Met | Timestamp when a fix or stable workaround is confirmed live by the engineering team |
+| SLA Paused | Pauses only after missing intake information has been formally requested from the client. The clock resumes when complete intake information is received. Elapsed time before the pause remains counted toward the SLA. |
+| SLA Suspended | During a confirmed third-party outage (see Section 4.5.2) |
+
+**Worked example — response window:** Client messages at 14:32 WAT.
+
+- If classified **P1**, the agent must send acknowledgment + tier classification between **14:47 and 15:02 WAT** (15–30 min after receipt).
+- If classified **P2**, the agent must send acknowledgment + tier classification between **15:02 and 15:17 WAT** (30–45 min after receipt).
+
+**Worked example — pause:** A P1 request is received at 14:00. Missing intake data is formally requested at 14:10 (10 minutes of SLA time already consumed). Complete data is received back from the client at 14:40. The clock resumes at 14:40, carrying forward the 10 minutes already consumed — it does not reset to zero and does not count the 14:10–14:40 waiting period against the SLA.
+
+### 4.5.2 SLA Suspension — Confirmed Third-Party Outage
+
+The clock is suspended, not merely paused, when resolution depends on a third-party system outside Albanny Technologies' control (e.g. a payment gateway, an SMS/WhatsApp Business API outage, a hosting provider's regional outage, or a domain registrar issue), provided:
+
+- The outage is independently verifiable (status page, provider confirmation, or equivalent evidence), and
+- Albanny Technologies has already deployed any workaround within its own control.
+
+The clock resumes the moment the third-party service is confirmed restored, with previously elapsed time still counted. This differs from a pause: a pause is caused by missing client information, while a suspension is caused by a dependency entirely outside both Albanny's and the client's control. Suspension does not apply to outages caused by Albanny Technologies' own infrastructure or vendors under its direct contract.
+
+### 4.5.3 Tier Definitions, Scope, and Confirmation Language
+
+The descriptions below restate the six tiers from Section 4.1 with client-facing confirmation language suited to direct messaging channels (WhatsApp, SMS, live chat) and concrete real-world examples for triage. This is the conversational counterpart to the formal SLA Language in Section 4.3; use either depending on channel and house style, but do not mix partial phrases from both into a single message. Where an example involves a service not explicitly named (e.g. a school portal or mobile app), classify it by the same logic shown below rather than by which product it happens to affect.
+
+**P1 — Critical (Platform Downtime)**
+
+Complete or near-complete inability to access the website, app, or live platform. Applies when 50% or more of users cannot access the platform, core pages/screens return errors (5xx, 4xx), or the entire domain/app is unreachable. Operates 24/7, with no business-hours restriction.
+
+SLA language to state: *"This has been logged as a P1 Critical Emergency. Our team commits to a 15–30 minute response and is mobilising technical resources to deploy a fix or stable workaround within 1–3 hours."*
+
+Examples: the website returns a 503 Service Unavailable error for all visitors; the homepage loads but all internal pages time out; the domain resolves but the server returns a blank/white screen for 100% of users.
+
+**P2 — High (Payment / Voting / Transactional Issues)**
+
+Failures in core transactional processing, payment gateways, voting modules, or live user-facing financial operations that directly affect end-user transactions.
+
+SLA language to state: *"This has been logged as a P2 High Priority issue. Our team commits to a 30–45 minute response and a target 1–3 hour operational fix or workaround window."*
+
+Examples: users cannot complete a payment on the checkout page because the gateway throws a persistent error; a voting module accepts submissions but does not record or display results; payment confirmation emails are not sent after successful transactions.
+
+**P3 — Moderate (Functional / Technical Issues)**
+
+Functional bugs or errors that impair usability or degrade user experience but do not prevent core access to the platform or block financial transactions. A bug is P3 when users can still navigate the site and complete primary actions, but with a degraded experience.
+
+SLA language to state: *"This has been logged as a P3 Moderate Issue. Our team acknowledges within 1–2 hours and commits to a target resolution window of 24–48 hours."*
+
+Examples: a contact form submits but no confirmation message appears on screen; a gallery section fails to load images correctly on mobile; a registration form's email validation allows invalid formats through.
+
+**P4 — Low (Minor Updates / Routine Requests)**
+
+Non-urgent text edits, cosmetic layout adjustments, routine media uploads, or minor configuration changes that carry no operational risk.
+
+SLA language to state: *"Logged as a P4 Routine Maintenance update. Our turnaround window for content adjustments is 2–3 business days."*
+
+Examples: update the "About Us" text with new team information; upload three new photos to the gallery section; change a button label from "Submit" to "Register Now."
+
+**P5 — Time-Bound (Scheduled & Live Deliverables)**
+
+Real-time schedule updates, results, scores, venue changes, cancellations, or any time-sensitive information tied to a fixed external deadline or an ongoing/imminent live event (including multi-city or multi-state events). Applies strictly during pre-scheduled active windows — not for pre-event setup or post-event archiving.
+
+SLA language to state: *"This is flagged as a P5 Time-Bound Update. Resources are deploying to process these real-time changes within 1–2 hours, strictly within the active live event or deadline window."*
+
+Examples: live competition results need to be updated across five cities simultaneously; a venue change for an event happening in three hours needs to be reflected on the website; live scores are not updating on the leaderboard during an ongoing event.
+
+**P6 — AI Automation (Production-Critical)**
+
+Failure, stoppage, or erroneous output of a deployed AI automation/workflow in active production use, where the automation itself is the client's operating process.
+
+SLA language to state: *"This has been classified as a Priority 6 (AI Automation – Production-Critical) issue. Our team will respond within 30–60 minutes and aims to resolve this within 2–6 hours."*
+
+Examples: an automated approvals pipeline stops processing submissions; a live customer-facing chat agent returns erroneous responses to all users; a production data pipeline silently fails to update records.
+
+---
+
+## 4.6 Escalation & Review
 
 - Any ticket unresolved at 80% of its allotted Resolution Time must be escalated to the relevant team lead automatically.
 - Multi-service incidents (e.g. an outage affecting both a website and a linked mobile app) are classified at the highest applicable tier across all affected services.
 - This matrix is reviewed quarterly, or immediately upon the launch of a new service line, to ensure tiers remain aligned with actual operating risk.
-
----
-
-### 4.1 SLA Clock — When Timing Starts
-
-**The SLA clock starts the moment a valid support request is received by the agent via WhatsApp**, regardless of whether the client's message has been read. "Received" is defined as the timestamp on the incoming WhatsApp message.
-
-| Clock Event | Definition |
-|---|---|
-| **SLA Start** | Timestamp of the client's first WhatsApp message containing the issue report |
-| **Response Time Met** | Timestamp of the agent's first substantive reply (acknowledgment + tier classification) |
-| **Resolution Time Met** | Timestamp when a fix or stable workaround is confirmed live by the engineering team |
-| **SLA Paused** | SLA pauses only after missing intake information has been formally requested from the client. The clock resumes when complete intake information is received. Elapsed time before the pause remains counted toward the SLA. |
-| **SLA Suspended** | During confirmed third-party outage (see Section 8) |
-
-> **Example:** Client messages at 14:32 WAT. Agent must respond with acknowledgment and tier classification by 14:47–14:47 WAT (P1) or 15:02–15:17 WAT (P2).
-
-> **Pause Example:** If a P1 request is received at 14:00, intake data is requested at 14:10, and complete data is received at 14:40, the SLA clock resumes at 14:40 with 10 minutes already consumed.
-
----
-
-### P1 — Critical (Website Downtime)
-
-**Definition:** Complete or near-complete inability to access the website or live platform. Applies when 50% or more of users cannot access the site, core pages return errors (5xx, 4xx), or the entire domain is unreachable.
-
-**Scope:** Operates **24/7**. No business-hours restriction.
-
-**SLA Language to State:**
-> *"This has been logged as a P1 Critical Emergency. Our team commits to a 15–30 minute response and is mobilising technical resources to deploy a fix or stable workaround within 1–3 hours."*
-
-**Real-World Examples:**
-- The company website returns a 503 Service Unavailable error for all visitors.
-- The homepage loads but all internal pages time out.
-- The domain resolves but the server returns a blank/white screen for 100% of users.
-
----
-
-### P2 — High (Payment / Voting Issues)
-
-**Definition:** Failures in core transactional processing, payment gateways, voting modules, or live user-facing financial operations that directly affect end-user transactions.
-
-**SLA Language to State:**
-> *"This has been logged as a P2 High Priority issue. Our team commits to a 30–45 minute response and a target 1–3 hour operational fix or workaround window."*
-
-**Real-World Examples:**
-- Users cannot complete a payment on the checkout page — the gateway throws a persistent error.
-- A voting module accepts submissions but does not record or display results.
-- Payment confirmation emails are not being sent after successful transactions.
-
----
-
-### P3 — Moderate (Technical Issues)
-
-**Definition:** Functional bugs or errors that impair usability or degrade user experience but do not prevent core access to the platform or block financial transactions. A bug is P3 when users can still navigate the site and complete primary actions, but with a degraded experience.
-
-**SLA Language to State:**
-> *"This has been logged as a P3 Moderate Issue. Our team acknowledges within 1–2 hours and commits to a target resolution window of 24–48 hours."*
-
-**Real-World Examples:**
-- A contact form submits but no confirmation message appears on screen.
-- A gallery section is not loading images correctly on mobile.
-- A registration form field validation allows invalid email formats.
-
----
-
-### P4 — Low (Minor Content Updates)
-
-**Definition:** Non-urgent text edits, cosmetic layout adjustments, routine media uploads, or minor configuration changes that carry no operational risk.
-
-**SLA Language to State:**
-> *"Logged as a P4 Routine Maintenance update. Our turnaround window for content adjustments is 2–3 business days."*
-
-**Real-World Examples:**
-- Update the 'About Us' text with new team information.
-- Upload three new photos to the gallery section.
-- Change a button label from 'Submit' to 'Register Now'.
-
----
-
-### P5 — Event Updates (Live & City Events)
-
-**Definition:** Real-time schedule updates, results, scores, venue changes, cancellations, or any time-sensitive information relating to ongoing or imminent multi-city/state live events. Applies **strictly during pre-scheduled active event windows** — not for pre-event setup or post-event archiving.
-
-**SLA Language to State:**
-> *"This is flagged as a P5 Live Event Update. Resources are deploying to process these real-time changes within 1–2 hours during the active live event window."*
-
-**Real-World Examples:**
-- Live competition results need to be updated on the platform across 5 cities simultaneously.
-- A venue change for an event happening in 3 hours needs to be reflected on the website.
-- Live scores are not updating on the leaderboard during an ongoing event.
-
----
+ 
+--- 
 
 ## 5. SUPPORT HOURS & AFTER-HOURS PROTOCOL
 
