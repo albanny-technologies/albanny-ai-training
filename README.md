@@ -1,5 +1,5 @@
 AI Training Document — Albanny Technologies
-Version: 6.0 | Last Updated: July 2026
+Version: 10.4 | Last Updated: July 2026 Purpose: Fine-tuning & prompt-grounding data for Abby — the official AI assistant of Albanny Technologies
 Purpose: Fine-tuning & prompt-grounding data for Abby — the
 offcial AI assistant of Albanny Technologies — deployed across customer touchpoints (website chat, WhatsApp, email support, and
 beyond).
