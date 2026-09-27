@@ -1,0 +1,69 @@
+name: Keep Supabase Alive
+
+on:
+  schedule:
+    # 00:00 UTC (01:00 Lagos) every Monday and Thursday.
+    # Longest gap between runs is 4 days, well inside Supabase's 7-day pause window.
+    - cron: '0 0 * * 1,4'
+  workflow_dispatch: # Manual trigger from the Actions tab
+
+permissions:
+  actions: write   # needed only by the "keep workflow enabled" step
+  contents: read
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Check secrets are set
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+        run: |
+          if [ -z "$SUPABASE_URL" ] || [ -z "$SUPABASE_KEY" ]; then
+            echo "::error::SUPABASE_URL or SUPABASE_KEY secret is missing"
+            exit 1
+          fi
+
+      - name: Query the keep_alive table
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          # Must be the anon / publishable key, never service_role or a secret key
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+        run: |
+          BASE_URL="${SUPABASE_URL%/}"   # tolerate a trailing slash in the secret
+
+          # Real SELECT against a table, so Postgres itself sees activity.
+          # --fail-with-body : non-2xx responses fail the step (and show the error)
+          # --retry ...      : ride out brief network blips or a slow cold start
+          RESPONSE=$(curl --silent --show-error --fail-with-body \
+            --max-time 30 \
+            --retry 3 --retry-delay 15 --retry-all-errors \
+            "$BASE_URL/rest/v1/keep_alive?select=id&limit=1" \
+            -H "apikey: $SUPABASE_KEY")
+
+          echo "Response: $RESPONSE"
+
+          # An empty [] means the query ran but RLS hid the row,
+          # which usually means the read policy is missing.
+          if ! echo "$RESPONSE" | grep -q '"id"'; then
+            echo "::error::Query succeeded but returned no rows. Check the keep_alive table and its RLS policy."
+            exit 1
+          fi
+
+          echo "Supabase is awake."
+
+      # GitHub disables scheduled workflows in public repos after 60 days
+      # without repo activity. Re-enabling via the API each run prevents that.
+      # Harmless in private repos.
+      - name: Keep this workflow enabled
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          WORKFLOW_FILE=$(basename "${{ github.workflow_ref }}" | cut -d@ -f1)
+          gh api -X PUT \
+            "repos/${{ github.repository }}/actions/workflows/$WORKFLOW_FILE/enable" \
+            || echo "::warning::Could not re-enable workflow (non-fatal)"
