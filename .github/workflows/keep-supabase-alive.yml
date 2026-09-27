@@ -2,9 +2,8 @@ name: Keep Supabase Alive
 
 on:
   schedule:
-    # 00:00 UTC (01:00 Lagos) every Monday and Thursday.
-    # Longest gap between runs is 4 days, well inside Supabase's 7-day pause window.
-    - cron: '0 0 * * 1,4'
+    # 05:23 UTC (06:23 Lagos) every day.
+    - cron: '23 5 * * *'
   workflow_dispatch: # Manual trigger from the Actions tab
 
 permissions:
